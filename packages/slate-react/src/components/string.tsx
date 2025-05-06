@@ -3,7 +3,7 @@ import { Editor, Text, Path, Element, Node } from 'slate'
 
 import { ReactEditor, useSlateStatic } from '..'
 import { useIsomorphicLayoutEffect } from '../hooks/use-isomorphic-layout-effect'
-import { IS_ANDROID, IS_IOS } from 'slate-dom'
+import { IS_ANDROID } from 'slate-dom'
 import { MARK_PLACEHOLDER_SYMBOL } from 'slate-dom'
 
 /**
@@ -129,7 +129,7 @@ export const ZeroWidthString = (props: {
 
   return (
     <span {...attributes}>
-      {!(IS_ANDROID || IS_IOS) || !isLineBreak ? '\uFEFF' : null}
+      {!IS_ANDROID || !isLineBreak ? '\uFEFF' : null}
       {isLineBreak ? <br /> : null}
     </span>
   )
